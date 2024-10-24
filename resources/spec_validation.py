@@ -8,4 +8,4 @@ def validate_data_product_spec():
     return True
 
 
-print(f'::set-output name=validity::{validate_data_product_spec()}')
+print(f'validity={validate_data_product_spec()}')

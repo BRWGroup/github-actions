@@ -3,8 +3,8 @@ name: Validate data product specification
 description: Checks if all required properties are valid. Fails if they're not.
 outputs:
   validity:
-    value: ${{ steps.validation.outputs.validity }}
     description: Boolean indicating validity
+    value: ${{ steps.validation.outputs.validity }}
 runs:
   using: 'composite'
   steps:
@@ -17,6 +17,5 @@ runs:
       shell: bash
     - name: Run validation
       id: validation
-      # run: python resources/spec_validation.py
-      run: echo 'True'
+      run: python resources/spec_validation.py >> $GITHUB_OUTPUT
       shell: bash
