@@ -1,0 +1,9 @@
+# action.yml
+name: Validate data product specification
+description: Checks if all required properties are valid. Fails if they're not.
+outputs:
+  validity:
+    description: Boolean indicating validity
+runs:
+  using: docker
+  image: Dockerfile
