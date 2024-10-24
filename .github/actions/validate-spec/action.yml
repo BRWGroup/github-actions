@@ -6,7 +6,7 @@ outputs:
     value: ${{ steps.validation.outputs.validity }}
     description: Boolean indicating validity
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - name: Install Python
       uses: actions/setup-python@v5
@@ -17,5 +17,5 @@ runs:
       shell: bash
     - name: Run validation
       id: validation
-      run: python./resources/spec_validation.py >> $GITHUB_OUTPUT
+      run: python ./resources/spec_validation.py
       shell: bash
