@@ -1,0 +1,21 @@
+# action.yml
+name: Validate data product specification
+description: Checks if all required properties are valid. Fails if they're not.
+outputs:
+  validity:
+    description: Boolean indicating validity
+    value: ${{ steps.validation.outputs.validity }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - name: Install Dependencies
+      run: pip install -r requirements.txt
+      shell: bash
+    - name: Run validation
+      id: validation
+      run: python resources/scripts/spec_validation.py >> $GITHUB_OUTPUT
+      shell: bash
