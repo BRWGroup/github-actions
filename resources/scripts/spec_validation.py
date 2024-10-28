@@ -20,7 +20,7 @@ def key_exists(spec, key_string):
         return f'Required {key_string} key is missing from spec'
 
 
-FINANCE_ANALIST_CPU_LIMIT = 30
+FINANCE_ANALIST_CPU_LIMIT = 120
 
 def validate_data_product_spec():
     # Load spec
